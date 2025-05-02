@@ -8,24 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="description" content="Omar Abdelrahman - Software Engineer portfolio showcasing skills, projects, and experience in software development.">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("C7dZGlv-OAcuiTiJm");
+        })();
+    </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Omar Abbas</div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-container">
+                <a href="#" class="logo">Omar Abbas</a>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
     </header>
@@ -43,8 +51,8 @@
                 <div class="hero-socials">
                     <a href="mailto:TryOmarAbbas@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a>
                     <a href="https://www.linkedin.com/in/TryOmar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/Omar7001-B" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://leetcode.com/u/TryOmar/" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
+                    <a href="https://github.com/TryOmar" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://leetcode.com/TryOmar/" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
                     <a href="https://codeforces.com/profile/TryOmar" target="_blank"><i class="fas fa-laptop-code"></i> Codeforces</a>
                     <a href="https://medium.com/@TryOmar" target="_blank"><i class="fab fa-medium"></i> Medium</a>
                     <a href="https://behance.net/TryOmar" target="_blank"><i class="fab fa-behance"></i> Behance</a>
@@ -443,8 +451,8 @@
                     <div class="achievement-icon">
                         <i class="fas fa-keyboard"></i>
                     </div>
-                    <h3>Typing Speed</h3>
-                    <p>Reached 150 words per minute, demonstrating exceptional typing efficiency and accuracy.</p>
+                    <h3>Typing Speed: 100+ WPM</h3>
+                    <p>Achieved 100+ WPM (Words Per Minute) on Monkeytype with 98% accuracy, placing in the top 5% of typists globally.</p>
                 </div>
             </div>
         </div>
@@ -486,10 +494,10 @@
                     </div>
                     
                     <div class="social-links">
+                        <a href="https://github.com/TryOmar" target="_blank"><i class="fab fa-github"></i> GitHub (TryOmar)</a>
                         <a href="https://www.linkedin.com/in/TryOmar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://github.com/Omar7001-B" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://leetcode.com/u/TryOmar/" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
-                        <a href="https://codeforces.com/profile/TryOmar" target="_blank"><i class="fas fa-laptop-code"></i> Codeforces</a>
+                        <a href="https://codeforces.com/profile/TryOmar" target="_blank"><i class="fas fa-code"></i> Codeforces</a>
+                        <a href="https://leetcode.com/TryOmar/" target="_blank"><i class="fas fa-laptop-code"></i> LeetCode</a>
                         <a href="https://medium.com/@TryOmar" target="_blank"><i class="fab fa-medium"></i> Medium</a>
                         <a href="https://behance.net/TryOmar" target="_blank"><i class="fab fa-behance"></i> Behance</a>
                         <a href="https://monkeytype.com/profile/TryOmar" target="_blank"><i class="fas fa-keyboard"></i> MonkeyType</a>
@@ -499,11 +507,11 @@
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="from_name" placeholder="Your Name" required>
                         </div>
                         
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="from_email" placeholder="Your Email" required>
                         </div>
                         
                         <div class="form-group">
@@ -514,7 +522,12 @@
                             <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn primary-btn">Send Message</button>
+                        <button type="submit" class="btn primary-btn">
+                            <span class="button-text">Send Message</span>
+                            <span class="button-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -541,11 +554,12 @@
                     </div>
                     
                     <div class="footer-socials">
+                        <a href="https://github.com/TryOmar" target="_blank"><i class="fab fa-github"></i> GitHub (TryOmar)</a>
                         <a href="https://www.linkedin.com/in/TryOmar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://github.com/Omar7001-B" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://leetcode.com/u/TryOmar/" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
-                        <a href="https://codeforces.com/profile/TryOmar" target="_blank"><i class="fas fa-laptop-code"></i> Codeforces</a>
+                        <a href="https://codeforces.com/profile/TryOmar" target="_blank"><i class="fas fa-code"></i> Codeforces</a>
+                        <a href="https://leetcode.com/TryOmar/" target="_blank"><i class="fas fa-laptop-code"></i> LeetCode</a>
                         <a href="https://medium.com/@TryOmar" target="_blank"><i class="fab fa-medium"></i> Medium</a>
+                        <a href="https://monkeytype.com/profile/TryOmar" target="_blank"><i class="fas fa-keyboard"></i> MonkeyType</a>
                     </div>
                 </div>
             </div>

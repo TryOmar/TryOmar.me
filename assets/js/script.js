@@ -1,29 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
+    // Mobile Navigation
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-link');
     
+    // Toggle mobile menu
     if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
     }
     
-    // Close mobile menu when clicking a nav link
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !e.target.closest('.nav-links') && 
+            !e.target.closest('.hamburger')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close mobile menu when clicking on a link
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Active link on scroll
+    const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-link');
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            if (hamburger && hamburger.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
             }
-            
-            // Remove active class from all nav links
-            navItems.forEach(link => link.classList.remove('active'));
-            
-            // Add active class to clicked nav link
-            this.classList.add('active');
+        });
+        
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').slice(1) === current) {
+                item.classList.add('active');
+            }
         });
     });
     
@@ -73,34 +103,68 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Contact form submission
+    // Contact form submission with EmailJS
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            // Get form elements
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const buttonText = submitBtn.querySelector('.button-text');
+            const buttonLoading = submitBtn.querySelector('.button-loading');
             
-            // For demonstration purposes, we'll just log the data
-            console.log({
-                name,
-                email,
-                subject,
-                message
-            });
-            
-            // In a real implementation, you would send this data to a server
-            // Example: fetch('/api/contact', { method: 'POST', body: JSON.stringify({ name, email, subject, message }) })
-            
-            // Show success message (you can replace this with your own implementation)
-            alert('Thank you for your message! I will get back to you soon.');
-            
-            // Reset form
-            contactForm.reset();
+            try {
+                // Show loading state
+                submitBtn.disabled = true;
+                buttonText.style.display = 'none';
+                buttonLoading.style.display = 'inline-block';
+                
+                // Get current time in a readable format
+                const now = new Date();
+                const timeString = now.toLocaleString('en-US', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                // Add time to the form data
+                const templateParams = {
+                    to_name: "Omar",
+                    from_name: this.from_name.value,
+                    from_email: this.from_email.value,
+                    subject: this.subject.value,
+                    message: this.message.value,
+                    time: timeString,
+                    reply_to: this.from_email.value // Add reply_to for better email threading
+                };
+                
+                // Send email using EmailJS with specific template ID
+                await emailjs.send(
+                    'default_service', 
+                    'template_qekywfb',  // Your specific template ID
+                    templateParams
+                );
+                
+                // Show success message
+                alert('Thank you for your message! I will get back to you soon.');
+                
+                // Reset form
+                contactForm.reset();
+                
+            } catch (error) {
+                console.error('Email error:', error);
+                alert('Oops! There was an error sending your message. Please try again later or email me directly.');
+                
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                buttonText.style.display = 'inline-block';
+                buttonLoading.style.display = 'none';
+            }
         });
     }
     
