@@ -50,7 +50,7 @@ export function Navigation() {
   useEffect(() => {
     const fetchViewCount = async () => {
       try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbx7E9idlWjAc2FsXSaKzkC6wDVLqUXkhDZBrVxTjf4rAqavxot6vFTSm4WxzgrYvwF_tg/exec')
+        const response = await fetch('https://script.google.com/macros/s/AKfycbxEZPZIYeCWEII7tyyiOmCb5Coh5DDSHhWSQnu6682BRmsPilKuEIZmVe6U7pnVTIbqOw/exec')
         if (response.ok) {
           const data = await response.json()
           if (data && data.status === 'success' && typeof data.views === 'number') {
