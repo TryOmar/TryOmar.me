@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const agent = req.headers.get('user-agent') || 'Unknown';
     const source = req.headers.get('referer') || 'Unknown';
 
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbw9g7lFA4oz7Ryz3eRp22W1M8LWENXq-exzCQdKQUvcnCbLIn4ZuE_8Y07EXwDh_X3smA/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbx0x3uiNtqEK8dU55z8MYwx0iFeXacjOdWTGpszYxO_Kw6OBltf5e-YbN6esZEuLEbd_A/exec';
 
     const response = await fetch(scriptUrl, {
       method: 'POST',
