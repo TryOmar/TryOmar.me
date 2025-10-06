@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { useTheme } from "next-themes"
+import { Eye } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 
 const navItems = [
@@ -17,6 +18,7 @@ const navItems = [
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("")
   const [mounted, setMounted] = useState(false)
+  const [viewCount, setViewCount] = useState<number | null>(null)
   const { theme, resolvedTheme } = useTheme()
 
   useEffect(() => {
@@ -44,6 +46,24 @@ export function Navigation() {
 
     return () => observer.disconnect()
   }, [mounted])
+
+  useEffect(() => {
+    const fetchViewCount = async () => {
+      try {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbx7E9idlWjAc2FsXSaKzkC6wDVLqUXkhDZBrVxTjf4rAqavxot6vFTSm4WxzgrYvwF_tg/exec')
+        if (response.ok) {
+          const data = await response.json()
+          if (data && data.status === 'success' && typeof data.views === 'number') {
+            setViewCount(data.views)
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch view count:', error)
+      }
+    }
+
+    fetchViewCount()
+  }, [])
 
   const getIconStyle = () => {
     if (!mounted) return ""
@@ -77,7 +97,15 @@ export function Navigation() {
                 </a>
               ))}
             </div>
-            <ThemeToggle />
+            <div className="flex items-center gap-2">
+              {viewCount !== null && (
+                <div className="flex items-center gap-1 px-2 py-1 text-sm text-muted-foreground">
+                  <Eye className="h-4 w-4" />
+                  <span>{viewCount.toLocaleString()}</span>
+                </div>
+              )}
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </nav>
@@ -115,7 +143,15 @@ export function Navigation() {
             ))}
           </div>
 
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            {viewCount !== null && (
+              <div className="flex items-center gap-1 px-2 py-1 text-sm text-muted-foreground">
+                <Eye className="h-4 w-4" />
+                <span>{viewCount.toLocaleString()}</span>
+              </div>
+            )}
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>

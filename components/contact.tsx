@@ -3,11 +3,12 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Mail, MapPin, Send } from "lucide-react"
+import { Mail, MapPin, Send, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useToast } from "@/hooks/use-toast"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -15,11 +16,46 @@ export function Contact() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { toast } = useToast()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbx7E9idlWjAc2FsXSaKzkC6wDVLqUXkhDZBrVxTjf4rAqavxot6vFTSm4WxzgrYvwF_tg/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        const result = await response.json()
+        if (result.status === 'success') {
+          toast({
+            title: "Message sent successfully!",
+            description: "Thank you for reaching out. I'll get back to you soon.",
+          })
+          setFormData({ name: "", email: "", message: "" })
+        } else {
+          throw new Error(result.message || 'Failed to send message')
+        }
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later or contact me directly via email.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -111,9 +147,18 @@ export function Contact() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full">
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </Card>
