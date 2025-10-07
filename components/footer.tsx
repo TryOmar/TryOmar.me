@@ -16,15 +16,6 @@ export function Footer() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://tryomar.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Portfolio"
-              >
-                <FaChrome className="h-5 w-5" />
-              </a>
-              <a
                 href="mailto:TryOmarAbbas@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"

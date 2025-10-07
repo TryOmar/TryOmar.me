@@ -72,11 +72,6 @@ export function Hero() {
               {/* Social Media Icons */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
                 <Button variant="ghost" size="icon" asChild>
-                  <a href="https://tryomar.me/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio">
-                    <FaChrome className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
                   <a href="mailto:TryOmarAbbas@gmail.com" aria-label="Email">
                     <Mail className="h-5 w-5" />
                   </a>
