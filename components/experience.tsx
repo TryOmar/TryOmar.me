@@ -109,7 +109,7 @@ export function Experience() {
                     <p className="text-primary font-medium">Information Technology Institute (ITI)</p>
                   </div>
                   <div className="text-sm text-muted-foreground mt-1 sm:mt-0 sm:text-right">
-                    <p>Oct 2024 – Jun 2025</p>
+                    <p>Oct 2025 – Jun 2026</p>
                     <p>Currently Enrolled</p>
                   </div>
                 </div>
