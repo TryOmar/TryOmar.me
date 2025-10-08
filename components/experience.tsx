@@ -136,7 +136,7 @@ export function Experience() {
               <Card className="p-4 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3">
                   <div>
-                    <h3 className="text-lg font-semibold mb-1">Bachelor's degree, Software Engineering</h3>
+                    <h3 className="text-lg font-semibold mb-1">Faculty of Computers and Information - Department of Software Engineering</h3>
                     <p className="text-primary font-medium">Assiut University</p>
                   </div>
                   <div className="text-sm text-muted-foreground mt-1 sm:mt-0 sm:text-right">
@@ -145,10 +145,10 @@ export function Experience() {
                   </div>
                 </div>
                 <p className="text-muted-foreground mb-3 text-sm leading-relaxed">
-                  Core courses: Programming Fundamentals, Data Structures & Algorithms, OOP, Operating Systems, Databases, Software Engineering, AI, Data Mining, and Embedded Systems.
+                  Bachelor's degree in Software Engineering with comprehensive coursework in programming fundamentals, algorithms, data structures, software engineering principles, databases, operating systems, and project management.
                 </p>
                 <div className="flex flex-wrap gap-1">
-                  {["Software Engineering", "Data Structures", "Algorithms", "OOP", "Databases", "AI", "Data Mining"].map((skill) => (
+                  {["Software Engineering", "Data Structures", "Algorithms", "OOP", "Databases", "Operating Systems"].map((skill) => (
                     <span key={skill} className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
                       {skill}
                     </span>
