@@ -29,6 +29,10 @@ const experiences = [
       "Learned REST API, SOAP, JSON, XML, Xpath, and WSDL. Experienced with WSO2 Integration Studio and Micro Integrator, using mediators like Log, Call, Filter, and PayloadFactory. Hands-on with API creation, testing, publishing, and lifecycle management. Familiar with Postman and Swagger. Learned Oracle SQL for querying, table design, sequences, and PL/SQL.",
     skills: ["REST API", "SOAP", "WSO2", "Oracle SQL", "Postman", "Swagger", "PL/SQL", "XML"],
     type: "internship",
+    links: [
+      { name: "Recommendation", url: "https://drive.google.com/file/d/1cvWCc507jDiSaFacrafQxvbLmPnofw0R/view?usp=sharing" },
+      { name: "Completion Certificate", url: "https://drive.google.com/file/d/1Rkg5XZ-S4pd5_xiY7539CLegKhDX2zPG/view?usp=sharing" }
+    ],
     isConnected: true,
     isLast: true
   },
