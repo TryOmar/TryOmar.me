@@ -22,23 +22,24 @@ const projectCategories = [
 const projects = [
   // Web Applications
   {
+    title: "Chess Speed Test",
+    description: "Master chess speed with our free online trainer. Practice bullet chess, blitz chess, and speed training. Test your moves per minute, improve reaction time, and climb leaderboards.",
+    period: "Dec 2024 – Present",
+    techStack: ["React", "TypeScript", "Chess Training", "Speed Testing"],
+    demo: "https://www.chessspeed.app/",
+    blog: "https://www.chessspeed.app/blog",
+    playStore: "https://play.google.com/store/apps/details?id=bullet.chess.trainer",
+    categories: ["Web Applications", "Mobile Applications"],
+    featured: true,
+  },
+  {
     title: "Listenify",
     description: "Modern web application for real-time speech transcription with AI-powered features. Built with React and TypeScript.",
     period: "Jan 2025 – Aug 2025",
     techStack: ["React", "TypeScript", "Web Speech API", "AI Integration"],
     github: "https://github.com/TryOmar/Listenify",
     demo: "https://listenify-live.vercel.app",
-    category: "Web Applications",
-    featured: true,
-  },
-  {
-    title: "ICPC Assiut Platform",
-    description: "Comprehensive training and community hub for competitive programming enthusiasts. Built with React, TypeScript, Next.js, and PostgreSQL.",
-    period: "Dec 2024 – Jun 2025",
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "React"],
-    github: "https://github.com/ICPCPlatform/icpc-platform",
-    demo: "https://icpcpassiut.tech/",
-    category: "Web Applications",
+    categories: ["Web Applications"],
     featured: true,
   },
   {
@@ -48,7 +49,7 @@ const projects = [
     techStack: ["Python", "Streamlit", "Pandas", "Scikit-learn"],
     github: "https://github.com/TryOmar/data-miner",
     demo: "https://data-miner-abbas.streamlit.app/",
-    category: "Web Applications",
+    categories: ["Web Applications"],
     featured: true,
   },
   {
@@ -58,7 +59,7 @@ const projects = [
     techStack: ["JavaScript", "AI", "HTML5", "CSS3"],
     github: "https://github.com/TryOmar/QuizatAI",
     demo: "https://tryomar.github.io/QuizatAI/",
-    category: "Web Applications",
+    categories: ["Web Applications"],
     featured: true,
   },
   {
@@ -68,7 +69,7 @@ const projects = [
     techStack: ["JavaScript", "Web Speech API", "Arabic Support", "TTS"],
     github: "https://github.com/TryOmar/ShadowSpeak",
     demo: "https://tryomar.github.io/ShadowSpeak/",
-    category: "Web Applications",
+    categories: ["Web Applications"],
     featured: false,
   },
   {
@@ -78,17 +79,7 @@ const projects = [
     techStack: ["JavaScript", "GitHub API", "CSS", "Website"],
     github: "https://github.com/TryOmar/RepoRadar",
     demo: "https://tryomar.github.io/RepoRadar/",
-    category: "Web Applications",
-    featured: false,
-  },
-  {
-    title: "Team Finder",
-    description: "Web application that helps university students find teammates for academic projects based on profiles and interests.",
-    period: "Dec 2024 – Dec 2024",
-    techStack: ["React", "Node.js", "TypeScript", "Team Finder"],
-    github: "https://github.com/TryOmar/team-finder",
-    demo: "https://team-finder-front.vercel.app/",
-    category: "Web Applications",
+    categories: ["Web Applications"],
     featured: false,
   },
   {
@@ -98,7 +89,7 @@ const projects = [
     techStack: ["HTML", "CSS", "JavaScript", "Python"],
     github: "https://github.com/TryOmar/gpa-calc",
     demo: "https://tryomar.github.io/gpa-calc/",
-    category: "Web Applications",
+    categories: ["Web Applications"],
     featured: false,
   },
   {
@@ -108,17 +99,45 @@ const projects = [
     techStack: ["JavaScript", "AI", "Task Generation"],
     github: "https://github.com/TryOmar/task-maker",
     demo: "https://tryomar.github.io/task-maker/",
-    category: "Web Applications",
+    categories: ["Web Applications"],
     featured: false,
   },
   {
-    title: "Qiasat Aradi",
+    title: "Dalal - Qiasat Aradi",
     description: "Comprehensive land measurement tool for Egyptian farmers. Convert, calculate, and manage land areas with traditional units.",
     period: "Jul 2023 – May 2025",
     techStack: ["HTML", "Agriculture Tools", "Land Measurement", "Mobile App"],
     github: "https://github.com/TryOmar/qiasat-aradi",
     demo: "https://tryomar.github.io/qiasat-aradi/",
-    category: "Web Applications",
+    playStore: "https://play.google.com/store/apps/details?id=aplic3397443.dei",
+    categories: ["Web Applications", "Mobile Applications"],
+    featured: false,
+  },
+  {
+    title: "OmarShop",
+    description: "ASP.NET MVC-based e-commerce platform with role-based authentication, product management, and order processing.",
+    period: "Apr 2025 – May 2025",
+    techStack: ["ASP.NET MVC", "C#", "SQL Server", "Authentication"],
+    github: "https://github.com/TryOmar/OmarShop",
+    categories: ["Web Applications"],
+    featured: false,
+  },
+  {
+    title: "MathXGame",
+    description: "ASP.NET MVC app for improving math skills with interactive challenges and real-time feedback.",
+    period: "May 2024 – Dec 2024",
+    techStack: ["ASP.NET MVC", "C#", "SQLite", "Game Development"],
+    github: "https://github.com/TryOmar/MathXGame",
+    categories: ["Web Applications"],
+    featured: false,
+  },
+  {
+    title: "CashGuard",
+    description: "Money tracking application for managing income and expenses with comprehensive financial management features.",
+    period: "Mar 2024 – Dec 2024",
+    techStack: ["ASP.NET MVC", "C#", "SQLite", "Money Tracker"],
+    github: "https://github.com/TryOmar/cash-guard",
+    categories: ["Web Applications"],
     featured: false,
   },
 
@@ -129,7 +148,7 @@ const projects = [
     period: "Feb 2024 – Sep 2025",
     techStack: ["C#", "OOP", "File Management", "BFS/DFS"],
     github: "https://github.com/TryOmar/ShellX",
-    category: "Desktop Applications",
+    categories: ["Desktop Applications"],
     featured: true,
   },
   {
@@ -138,35 +157,8 @@ const projects = [
     period: "Jan 2023 – Oct 2025",
     techStack: ["AutoHotkey", "Windows App", "Productivity", "Time Tracking"],
     github: "https://github.com/TryOmar/StopWatchMe",
-    category: "Desktop Applications",
+    categories: ["Desktop Applications"],
     featured: true,
-  },
-  {
-    title: "OmarShop",
-    description: "ASP.NET MVC-based e-commerce platform with role-based authentication, product management, and order processing.",
-    period: "Apr 2025 – May 2025",
-    techStack: ["ASP.NET MVC", "C#", "SQL Server", "Authentication"],
-    github: "https://github.com/TryOmar/OmarShop",
-    category: "Desktop Applications",
-    featured: false,
-  },
-  {
-    title: "MathXGame",
-    description: "ASP.NET MVC app for improving math skills with interactive challenges and real-time feedback.",
-    period: "May 2024 – Dec 2024",
-    techStack: ["ASP.NET MVC", "C#", "SQLite", "Game Development"],
-    github: "https://github.com/TryOmar/MathXGame",
-    category: "Desktop Applications",
-    featured: false,
-  },
-  {
-    title: "CashGuard",
-    description: "Money tracking application for managing income and expenses with comprehensive financial management features.",
-    period: "Mar 2024 – Dec 2024",
-    techStack: ["ASP.NET MVC", "C#", "SQLite", "Money Tracker"],
-    github: "https://github.com/TryOmar/cash-guard",
-    category: "Desktop Applications",
-    featured: false,
   },
   {
     title: "Vehicle Parking Project",
@@ -174,7 +166,7 @@ const projects = [
     period: "Dec 2022 – Jan 2025",
     techStack: ["Java", "GUI", "OOP", "Parking Management"],
     github: "https://github.com/TryOmar/Vehicle-Parking-Project",
-    category: "Desktop Applications",
+    categories: ["Desktop Applications"],
     featured: false,
   },
   {
@@ -183,7 +175,7 @@ const projects = [
     period: "May 2024 – Jan 2025",
     techStack: ["Python", "Compiler", "Parser", "Arabic Programming"],
     github: "https://github.com/TryOmar/CompilerXArabic",
-    category: "Desktop Applications",
+    categories: ["Desktop Applications"],
     featured: false,
   },
   {
@@ -192,7 +184,7 @@ const projects = [
     period: "Dec 2022 – Dec 2022",
     techStack: ["C#", "Windows Forms", "GUI", "Calculator"],
     github: "https://github.com/TryOmar/firstCalculator",
-    category: "Desktop Applications",
+    categories: ["Desktop Applications"],
     featured: false,
   },
 
@@ -203,7 +195,8 @@ const projects = [
     period: "Dec 2024 – Mar 2025",
     techStack: ["Kotlin", "Android", "Cryptography", "Steganography"],
     github: "https://github.com/TryOmar/CryptoX",
-    category: "Mobile Applications",
+    playStore: "https://play.google.com/store/apps/details?id=com.omar.cryptox",
+    categories: ["Mobile Applications"],
     featured: true,
   },
   {
@@ -212,18 +205,10 @@ const projects = [
     period: "Oct 2024 – Dec 2024",
     techStack: ["Java", "Android", "SQLite", "Todo App"],
     github: "https://github.com/TryOmar/todo-abbas",
-    category: "Mobile Applications",
+    categories: ["Mobile Applications"],
     featured: false,
   },
-  {
-    title: "CryptoXAndroid",
-    description: "Android cryptography application built with Java for secure data encryption and decryption.",
-    period: "Oct 2024 – Oct 2024",
-    techStack: ["Java", "Android", "Cryptography"],
-    github: "https://github.com/TryOmar/CryptoXAndroid",
-    category: "Mobile Applications",
-    featured: false,
-  },
+
 
   // Bots & Automation
   {
@@ -232,7 +217,7 @@ const projects = [
     period: "Sep 2025 – Sep 2025",
     techStack: ["TypeScript", "Discord Bot", "Analytics", "Moderation"],
     github: "https://github.com/TryOmar/Insults",
-    category: "Bots & Automation",
+    categories: ["Bots & Automation"],
     featured: true,
   },
   {
@@ -241,18 +226,10 @@ const projects = [
     period: "Sep 2025 – Sep 2025",
     techStack: ["C#", "Discord Bot", "LeetCode"],
     github: "https://github.com/TryOmar/LeetBot",
-    category: "Bots & Automation",
+    categories: ["Bots & Automation"],
     featured: false,
   },
-  {
-    title: "SpammerMod",
-    description: "Minecraft mod that automates chat messaging with customizable configurations for testing, debugging, or auto-responses.",
-    period: "Oct 2024 – Oct 2025",
-    techStack: ["Java", "Minecraft Mod", "Chat Automation", "Testing Tool"],
-    github: "https://github.com/TryOmar/SpammerMod",
-    category: "Bots & Automation",
-    featured: false,
-  },
+
 
   // Games
   {
@@ -262,7 +239,7 @@ const projects = [
     techStack: ["Next.js", "TypeScript", "MediaPipe", "Canvas API"],
     github: "https://github.com/TryOmar/handwave-game",
     demo: "https://hand-wave.vercel.app/",
-    category: "Games",
+    categories: ["Games"],
     featured: true,
   },
   {
@@ -272,7 +249,7 @@ const projects = [
     techStack: ["Python", "Pygame", "Game Development", "Platformer"],
     github: "https://github.com/TryOmar/jumping-game",
     demo: "https://tryomar.github.io/jumping-game/",
-    category: "Games",
+    categories: ["Games"],
     featured: false,
   },
   {
@@ -281,48 +258,10 @@ const projects = [
     period: "May 2024 – May 2024",
     techStack: ["Python", "Sudoku", "Puzzle Game"],
     github: "https://github.com/TryOmar/SodukuXGame",
-    category: "Games",
-    featured: false,
-  },
-  {
-    title: "XO Play",
-    description: "Tic-tac-toe game implementation with interactive gameplay and win detection.",
-    period: "Feb 2024 – Feb 2024",
-    techStack: ["JavaScript", "Tic-tac-toe", "Game"],
-    github: "https://github.com/TryOmar/XO-play",
-    category: "Games",
+    categories: ["Games"],
     featured: false,
   },
 
-  // APIs & Backend
-  {
-    title: "Dev Profile API",
-    description: "Comprehensive API service that aggregates developer profiles and activities from various coding platforms.",
-    period: "Dec 2024 – May 2025",
-    techStack: ["JavaScript", "API", "Developer Profiles", "Aggregation"],
-    github: "https://github.com/TryOmar/dev-profile-api",
-    demo: "https://dev-profile-api.vercel.app",
-    category: "APIs & Backend",
-    featured: true,
-  },
-  {
-    title: "Analytics System",
-    description: "Backend API system for analytics of the ICPC Assiut platform providing data insights and reporting.",
-    period: "Mar 2025 – Jul 2025",
-    techStack: ["TypeScript", "API", "Analytics", "Backend"],
-    github: "https://github.com/ICPCPlatform/analytics-sys",
-    category: "APIs & Backend",
-    featured: false,
-  },
-  {
-    title: "Todo API",
-    description: "RESTful API for todo management with CRUD operations and data persistence.",
-    period: "Aug 2024 – Aug 2024",
-    techStack: ["JavaScript", "API", "REST", "Todo Management"],
-    github: "https://github.com/TryOmar/TodoAPI",
-    category: "APIs & Backend",
-    featured: false,
-  },
 
   // Minecraft Mods
   {
@@ -331,7 +270,7 @@ const projects = [
     period: "Aug 2024 – Dec 2024",
     techStack: ["Java", "Minecraft Mod", "Automation", "Inventory Management"],
     github: "https://github.com/TryOmar/falcon-mod",
-    category: "Minecraft Mods",
+    categories: ["Minecraft Mods"],
     featured: true,
   },
   {
@@ -340,7 +279,16 @@ const projects = [
     period: "Aug 2024 – Aug 2024",
     techStack: ["Java", "Minecraft Mod", "Farming", "Automation"],
     github: "https://github.com/TryOmar/Falcon-Farm-1.21.X",
-    category: "Minecraft Mods",
+    categories: ["Minecraft Mods"],
+    featured: false,
+  },
+  {
+    title: "SpammerMod",
+    description: "Minecraft mod that automates chat messaging with customizable configurations for testing, debugging, or auto-responses.",
+    period: "Oct 2024 – Oct 2025",
+    techStack: ["Java", "Minecraft Mod", "Chat Automation", "Testing Tool"],
+    github: "https://github.com/TryOmar/SpammerMod",
+    categories: ["Minecraft Mods"],
     featured: false,
   },
 
@@ -352,7 +300,7 @@ const projects = [
     techStack: ["Business Analysis", "LaTeX", "SRS Documentation", "Agile"],
     github: "https://github.com/TryOmar/Vacation-System",
     demo: "https://tryomar.github.io/Vacation-System/",
-    category: "Documentation",
+    categories: ["Documentation"],
     featured: true,
   },
   {
@@ -362,7 +310,7 @@ const projects = [
     techStack: ["Cost Estimation", "Data Visualization", "Project Management", "Python"],
     github: "https://github.com/TryOmar/Listenify-Cost-Metrics-and-Estimation",
     demo: "https://tryomar.github.io/Listenify-Cost-Metrics-and-Estimation/",
-    category: "Documentation",
+    categories: ["Documentation"],
     featured: false,
   },
   {
@@ -371,7 +319,7 @@ const projects = [
     period: "May 2025 – Aug 2025",
     techStack: ["LaTeX", "Algorithms", "Data Structures", "Competitive Programming"],
     github: "https://github.com/TryOmar/TryOmar-CP-Reference",
-    category: "Documentation",
+    categories: ["Documentation"],
     featured: false,
   },
 
@@ -382,7 +330,7 @@ const projects = [
     period: "Oct 2024 – Jun 2025",
     techStack: ["Python", "File Scraping", "Directory Processing"],
     github: "https://github.com/TryOmar/FolderScraper",
-    category: "Scripts & Tools",
+    categories: ["Scripts & Tools"],
     featured: true,
   },
   {
@@ -391,7 +339,7 @@ const projects = [
     period: "Jan 2023 – Jun 2023",
     techStack: ["AutoHotkey", "Flashcards", "Anki", "Automation"],
     github: "https://github.com/TryOmar/AnkiUploader",
-    category: "Scripts & Tools",
+    categories: ["Scripts & Tools"],
     featured: false,
   },
   {
@@ -400,7 +348,7 @@ const projects = [
     period: "Apr 2023 – Apr 2023",
     techStack: ["AutoHotkey", "Translation", "Hotkeys"],
     github: "https://github.com/TryOmar/QuickTranslate",
-    category: "Scripts & Tools",
+    categories: ["Scripts & Tools"],
     featured: false,
   },
 
@@ -411,7 +359,7 @@ const projects = [
     period: "May 2023 – May 2023",
     techStack: ["JavaScript", "Browser Extension", "Lichess", "Chess"],
     github: "https://github.com/TryOmar/Lichess-Tools",
-    category: "Browser Extensions",
+    categories: ["Browser Extensions"],
     featured: true,
   },
   {
@@ -420,7 +368,7 @@ const projects = [
     period: "May 2023 – May 2023",
     techStack: ["JavaScript", "Browser Extension", "Time Alerts", "Chess"],
     github: "https://github.com/TryOmar/Lichess-Time-Alert",
-    category: "Browser Extensions",
+    categories: ["Browser Extensions"],
     featured: false,
   },
 ]
@@ -433,7 +381,7 @@ export function Projects() {
 
   const filteredProjects = selectedCategory === "All" 
     ? projects 
-    : projects.filter(project => project.category === selectedCategory)
+    : projects.filter(project => project.categories.includes(selectedCategory))
 
   const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE)
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
@@ -468,7 +416,7 @@ export function Projects() {
               All ({projects.length})
             </Button>
             {projectCategories.map((category) => {
-              const count = projects.filter(p => p.category === category).length
+              const count = projects.filter(p => p.categories.includes(category)).length
               return (
                 <Button
                   key={category}
@@ -514,18 +462,36 @@ export function Projects() {
                   )}
                 </div>
                 
-                <div className="flex gap-2 mt-auto">
-                  <Button variant="outline" size="sm" asChild className="flex-1">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      Code
-                    </a>
-                  </Button>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.github && (
+                    <Button variant="outline" size="sm" asChild className="flex-1 min-w-0">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" />
+                        Code
+                      </a>
+                    </Button>
+                  )}
                   {project.demo && (
-                    <Button variant="outline" size="sm" asChild className="flex-1">
+                    <Button variant="outline" size="sm" asChild className="flex-1 min-w-0">
                       <a href={project.demo} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Demo
+                      </a>
+                    </Button>
+                  )}
+                  {project.playStore && (
+                    <Button variant="outline" size="sm" asChild className="flex-1 min-w-0">
+                      <a href={project.playStore} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Play Store
+                      </a>
+                    </Button>
+                  )}
+                  {project.blog && (
+                    <Button variant="outline" size="sm" asChild className="flex-1 min-w-0">
+                      <a href={project.blog} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Blog
                       </a>
                     </Button>
                   )}
