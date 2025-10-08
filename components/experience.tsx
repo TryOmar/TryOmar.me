@@ -45,6 +45,9 @@ const experiences = [
       "Mentored junior students on algorithms and problem-solving techniques. Prepared trainees for competitive programming contests and international competitions.",
     skills: ["Teaching", "Problem Solving", "Algorithms", "Competitive Programming"],
     type: "coaching",
+    links: [
+      { name: "Certificate of Appreciation", url: "https://drive.google.com/file/d/1q0tyYBGClRcZyeFDz4rdlUo-4triLUT6/view?usp=sharing" }
+    ],
   },
 ]
 
