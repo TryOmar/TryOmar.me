@@ -1,57 +1,111 @@
 import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 const skillCategories = [
   {
     category: "Programming Languages",
     skills: [
-      { name: "C++", level: 95 },
-      { name: "JavaScript", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "Python", level: 85 },
-      { name: "Java", level: 80 },
-      { name: "C#", level: 80 },
-      { name: "Kotlin", level: 75 },
-      { name: "AutoHotkey", level: 85 },
+      { name: "C/C++", proficiency: "Intermediate" },
+      { name: "Java", proficiency: "Beginner" },
+      { name: "Kotlin", proficiency: "Beginner" },
+      { name: "C#", proficiency: "Beginner" },
+      { name: "Python", proficiency: "Intermediate" },
+      { name: "JavaScript", proficiency: "Intermediate" },
+      { name: "TypeScript", proficiency: "Beginner" },
+      { name: "AutoHotkey", proficiency: "Intermediate" },
+      { name: "MATLAB", proficiency: "Beginner" },
     ],
   },
   {
-    category: "Web Development",
+    category: "Web Technologies",
     skills: [
-      { name: "React", level: 90 },
-      { name: "Next.js", level: 85 },
-      { name: "HTML/CSS", level: 95 },
-      { name: "Tailwind CSS", level: 90 },
-      { name: "Node.js", level: 80 },
-      { name: "Streamlit", level: 85 },
-      { name: "ASP.NET MVC", level: 80 },
+      { name: "React", proficiency: "Beginner" },
+      { name: "Next.js", proficiency: "Beginner" },
+      { name: "ASP.NET MVC", proficiency: "Beginner" },
+      { name: "jQuery", proficiency: "Beginner" },
+      { name: "Node.js", proficiency: "Beginner" },
     ],
   },
   {
-    category: "Databases & APIs",
+    category: "Markup and Data Languages",
     skills: [
-      { name: "Oracle SQL", level: 85 },
-      { name: "PostgreSQL", level: 80 },
-      { name: "SQLite", level: 85 },
-      { name: "REST API", level: 90 },
-      { name: "WSO2 Integration", level: 80 },
-      { name: "Postman", level: 90 },
-      { name: "Swagger", level: 75 },
+      { name: "HTML", proficiency: "Intermediate" },
+      { name: "CSS", proficiency: "Intermediate" },
+      { name: "Markdown", proficiency: "Intermediate" },
+      { name: "JSON", proficiency: "Intermediate" },
+      { name: "XML", proficiency: "Beginner" },
     ],
   },
   {
-    category: "Tools & Technologies",
+    category: "Database Technologies",
     skills: [
-      { name: "Git", level: 95 },
-      { name: "LaTeX", level: 90 },
-      { name: "Business Analysis", level: 85 },
-      { name: "Agile Methodologies", level: 80 },
-      { name: "Competitive Programming", level: 95 },
-      { name: "Data Structures & Algorithms", level: 95 },
-      { name: "OOP", level: 90 },
-      { name: "Android Development", level: 75 },
+      { name: "MongoDB", proficiency: "Beginner" },
+      { name: "PostgreSQL", proficiency: "Beginner" },
+      { name: "SQL", proficiency: "Intermediate" },
+      { name: "SQLite", proficiency: "Intermediate" },
+    ],
+  },
+  {
+    category: "Deployment Platforms",
+    skills: [
+      { name: "MongoDB Atlas", proficiency: "Beginner" },
+      { name: "Supabase", proficiency: "Beginner" },
+      { name: "Vercel", proficiency: "Intermediate" },
+      { name: "GitHub Pages", proficiency: "Intermediate" },
+      { name: "Google Play", proficiency: "Beginner" },
+      { name: "Railway", proficiency: "Beginner" },
+      { name: "Netlify", proficiency: "Beginner" },
+    ],
+  },
+  {
+    category: "Documentation Stack",
+    skills: [
+      { name: "GitBook", proficiency: "Beginner" },
+      { name: "Overleaf", proficiency: "Intermediate" },
+      { name: "Obsidian", proficiency: "Beginner" },
+      { name: "Notion", proficiency: "Beginner" },
+      { name: "Microsoft Office", proficiency: "Intermediate" },
+      { name: "Google Docs", proficiency: "Intermediate" },
+      { name: "LaTeX", proficiency: "Beginner" },
+    ],
+  },
+  {
+    category: "Integrated Development Environments",
+    skills: [
+      { name: "Vim", proficiency: "Beginner" },
+      { name: "VS Code", proficiency: "Intermediate" },
+      { name: "Visual Studio", proficiency: "Beginner" },
+      { name: "IntelliJ IDEA", proficiency: "Beginner" },
+      { name: "Android Studio", proficiency: "Beginner" },
+      { name: "PyCharm", proficiency: "Beginner" },
+      { name: "CLion", proficiency: "Beginner" },
+    ],
+  },
+  {
+    category: "Blogs & Learning Platforms",
+    skills: [
+      { name: "Dev.to", proficiency: "Beginner" },
+      { name: "Medium", proficiency: "Beginner" },
+      { name: "LeetCode", proficiency: "Intermediate" },
+      { name: "Codeforces", proficiency: "Intermediate" },
     ],
   },
 ]
+
+const getProficiencyVariant = (proficiency: string) => {
+  switch (proficiency) {
+    case "Expert":
+      return "default"
+    case "Advanced":
+      return "secondary"
+    case "Intermediate":
+      return "outline"
+    case "Beginner":
+      return "outline"
+    default:
+      return "outline"
+  }
+}
 
 export function Skills() {
   return (
@@ -63,19 +117,18 @@ export function Skills() {
             {skillCategories.map((category, index) => (
               <Card key={index} className="p-6">
                 <h3 className="text-xl font-semibold mb-6">{category.category}</h3>
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-primary rounded-full transition-all duration-500"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
+                    <div key={skill.name} className="flex flex-col items-center gap-2">
+                      <Badge 
+                        variant={getProficiencyVariant(skill.proficiency)}
+                        className="text-sm px-3 py-1"
+                      >
+                        {skill.name}
+                      </Badge>
+                      <span className="text-xs text-muted-foreground">
+                        {skill.proficiency}
+                      </span>
                     </div>
                   ))}
                 </div>
