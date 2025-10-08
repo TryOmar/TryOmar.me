@@ -14,7 +14,8 @@ const experiences = [
     type: "internship",
     links: [
       { name: "Business Analysis Deliverables", url: "https://tryomar.github.io/Vacation-System/" },
-      { name: "GitHub Repository", url: "https://github.com/TryOmar/Vacation-System" }
+      { name: "GitHub Repository", url: "https://github.com/TryOmar/Vacation-System" },
+      { name: "Completion Certificate", url: "https://drive.google.com/file/d/1t74b4pkQBxFHD2J5BzhYXWkQ3nyobdeK/view" }
     ],
     isConnected: true,
     isFirst: true
