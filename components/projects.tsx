@@ -6,19 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
 
-const projectCategories = [
-  "Web Applications",
-  "Desktop Applications", 
-  "Mobile Applications",
-  "Bots & Automation",
-  "Games",
-  "APIs & Backend",
-  "Minecraft Mods",
-  "Documentation",
-  "Scripts & Tools",
-  "Browser Extensions"
-]
-
 const projects = [
   // Web Applications
   {
@@ -43,14 +30,15 @@ const projects = [
     featured: true,
   },
   {
-    title: "DataMiner",
-    description: "Interactive web application for data mining and machine learning. Helps users upload, clean, transform, and analyze datasets.",
-    period: "Apr 2025 – Jun 2025",
-    techStack: ["Python", "Streamlit", "Pandas", "Scikit-learn"],
-    github: "https://github.com/TryOmar/data-miner",
-    demo: "https://data-miner-abbas.streamlit.app/",
-    categories: ["Web Applications"],
-    featured: true,
+    title: "Dalal - Qiasat Aradi",
+    description: "Comprehensive land measurement tool for Egyptian farmers. Convert, calculate, and manage land areas with traditional units.",
+    period: "Jul 2023 – May 2025",
+    techStack: ["HTML", "Agriculture Tools", "Land Measurement", "Mobile App"],
+    github: "https://github.com/TryOmar/qiasat-aradi",
+    demo: "https://tryomar.github.io/qiasat-aradi/",
+    playStore: "https://play.google.com/store/apps/details?id=aplic3397443.dei",
+    categories: ["Web Applications", "Mobile Applications"],
+    featured: false,
   },
   {
     title: "QuizatAI",
@@ -100,17 +88,6 @@ const projects = [
     github: "https://github.com/TryOmar/task-maker",
     demo: "https://tryomar.github.io/task-maker/",
     categories: ["Web Applications"],
-    featured: false,
-  },
-  {
-    title: "Dalal - Qiasat Aradi",
-    description: "Comprehensive land measurement tool for Egyptian farmers. Convert, calculate, and manage land areas with traditional units.",
-    period: "Jul 2023 – May 2025",
-    techStack: ["HTML", "Agriculture Tools", "Land Measurement", "Mobile App"],
-    github: "https://github.com/TryOmar/qiasat-aradi",
-    demo: "https://tryomar.github.io/qiasat-aradi/",
-    playStore: "https://play.google.com/store/apps/details?id=aplic3397443.dei",
-    categories: ["Web Applications", "Mobile Applications"],
     featured: false,
   },
   {
@@ -362,16 +339,65 @@ const projects = [
     categories: ["Browser Extensions"],
     featured: true,
   },
+
   {
-    title: "Lichess Time Alert",
-    description: "Browser extension for Lichess that provides time alerts and notifications during chess games.",
-    period: "May 2023 – May 2023",
-    techStack: ["JavaScript", "Browser Extension", "Time Alerts", "Chess"],
-    github: "https://github.com/TryOmar/Lichess-Time-Alert",
-    categories: ["Browser Extensions"],
+    title: "AI-Search-Algorithms",
+    description: "Comprehensive collection of artificial intelligence and machine learning algorithms including search algorithms, ML implementations, and game AI solutions in Python.",
+    period: "Apr 2023 – Apr 2023",
+    techStack: ["Python", "AI/ML", "Search Algorithms", "Machine Learning", "Game AI"],
+    github: "https://github.com/Omar7001-B/AI-Search-Algorithms",
+    categories: ["Documentation", "Games"],
+    featured: true,
+  },
+  {
+    title: "Embedded Arduino Projects",
+    description: "Arduino-based motor control systems featuring timer-controlled and temperature-responsive systems with interactive interfaces, H-Bridge drivers, and complete documentation.",
+    period: "Aug 2024 – Aug 2024",
+    techStack: ["Arduino", "C++", "Embedded Systems", "Motor Control", "Temperature Sensors", "LCD Display"],
+    github: "https://github.com/TryOmar/embedded-arduino-projects",
+    demo: "https://tryomar.github.io/embedded-arduino-projects/",
+    categories: ["Desktop Applications"],
+    featured: true,
+  },
+  {
+    title: "Data Mining Formulas",
+    description: "A comprehensive LaTeX reference document for data mining formulas and mathematical concepts, featuring a clean dark-themed design for better readability.",
+    period: "Jun 2024 – Jun 2024",
+    techStack: ["LaTeX", "Data Science", "Mathematical Formulas", "Documentation", "PDF Generation"],
+    github: "https://github.com/TryOmar/data-mining-formulas",
+    categories: ["Documentation"],
     featured: false,
   },
+  {
+    title: "Pygame vs Arcade Comparison",
+    description: "A side-by-side comparison of Pygame and Arcade libraries through identical game implementations. Features multiple simple games including snake, collision demos, and interactive examples.",
+    period: "Jun 2024 – Jun 2024",
+    techStack: ["Python", "Pygame", "Arcade", "Game Development", "Educational", "2D Games"],
+    github: "https://github.com/TryOmar/pygame-vs-arcade",
+    categories: ["Games", "Documentation"],
+    featured: true,
+  },
+  // Other
+  {
+    title: "DataMiner",
+    description: "Interactive web application for data mining and machine learning. Helps users upload, clean, transform, and analyze datasets.",
+    period: "Apr 2025 – Jun 2025",
+    techStack: ["Python", "Streamlit", "Pandas", "Scikit-learn"],
+    github: "https://github.com/TryOmar/data-miner",
+    demo: "https://data-miner-abbas.streamlit.app/",
+    categories: ["Web Applications", "Data Science"],
+    featured: true,
+  }
 ]
+
+// Dynamically extract unique categories from projects and sort by count (descending)
+const projectCategories = Array.from(
+  new Set(projects.flatMap(project => project.categories))
+).sort((a, b) => {
+  const countA = projects.filter(p => p.categories.includes(a)).length
+  const countB = projects.filter(p => p.categories.includes(b)).length
+  return countB - countA // Descending order (most projects first)
+})
 
 const ITEMS_PER_PAGE = 6
 
