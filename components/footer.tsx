@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react"
-import { FaChrome, FaGithub, FaLinkedin, FaMedium, FaBehance, FaGooglePlay, FaCoffee } from "react-icons/fa"
+import { Button } from "@/components/ui/button"
+import { FaGithub, FaLinkedin, FaMedium, FaBehance, FaGooglePlay, FaCoffee } from "react-icons/fa"
 import { SiLeetcode, SiCodeforces, SiMonkeytype } from "react-icons/si"
 
 export function Footer() {
@@ -14,95 +15,57 @@ export function Footer() {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="mailto:TryOmarAbbas@gmail.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-              <a
-                href="https://github.com/TryOmar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="GitHub"
-              >
-                <FaGithub className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com/in/omar-abdelrahman"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://leetcode.com/TryOmar/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="LeetCode"
-              >
-                <SiLeetcode className="h-5 w-5" />
-              </a>
-              <a
-                href="https://codeforces.com/profile/TryOmar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Codeforces"
-              >
-                <SiCodeforces className="h-5 w-5" />
-              </a>
-              <a
-                href="https://medium.com/@TryOmarAbbas"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Medium"
-              >
-                <FaMedium className="h-5 w-5" />
-              </a>
-              <a
-                href="https://behance.net/TryOmar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Behance"
-              >
-                <FaBehance className="h-5 w-5" />
-              </a>
-              <a
-                href="https://monkeytype.com/profile/TryOmar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Monkeytype"
-              >
-                <SiMonkeytype className="h-5 w-5" />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/developer?id=TryOmar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Google Play"
-              >
-                <FaGooglePlay className="h-5 w-5" />
-              </a>
-              <a
-                href="https://buymeacoffee.com/TryOmar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Buy Me a Coffee"
-              >
-                <FaCoffee className="h-5 w-5" />
-              </a>
+            <div className="flex flex-wrap justify-center gap-2">
+              <Button variant="ghost" size="icon" asChild>
+                <a href="mailto:TryOmarAbbas@gmail.com" aria-label="Email">
+                  <Mail className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://github.com/TryOmar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <FaGithub className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://www.linkedin.com/in/TryOmar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <FaLinkedin className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://leetcode.com/u/TryOmar/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+                  <SiLeetcode className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://codeforces.com/profile/TryOmar" target="_blank" rel="noopener noreferrer" aria-label="Codeforces">
+                  <SiCodeforces className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://medium.com/@TryOmar" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                  <FaMedium className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://behance.net/TryOmar" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                  <FaBehance className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://monkeytype.com/profile/TryOmar" target="_blank" rel="noopener noreferrer" aria-label="MonkeyType">
+                  <SiMonkeytype className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://play.google.com/store/apps/dev?id=4995882925966510970" target="_blank" rel="noopener noreferrer" aria-label="Google Play">
+                  <FaGooglePlay className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://buymeacoffee.com/tryomar" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee">
+                  <FaCoffee className="h-5 w-5" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
